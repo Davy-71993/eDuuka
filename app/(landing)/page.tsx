@@ -7,6 +7,8 @@ import ProductCard from "@/components/parts/ProductCard";
 import FadingLine from "@/components/parts/FadingLine";
 import { Suspense } from "react";
 import { HScroll } from "@/components/parts/HScroll";
+import Link from "next/link";
+import ItemsList from "@/components/parts/ItemsList";
 
 export default async function Index() {
   
@@ -25,21 +27,14 @@ export default async function Index() {
       </div>
       <Container>
         <div className="my-5">
-          <h1 className="text-2xl my-5">Popular Categories:</h1>
+          <Link href="/categories" className="text-2xl my-5 hover:underline">Popular Categories:</Link>
           <FadingLine/>
           <HScroll />
         </div>
         <div className="my-5">
-          <h1 className="text-2xl my-5">Top Selling Items:</h1>
+          <Link href="/view" className="text-2xl my-5 hover:underline">Top Selling Items:</Link>
           <FadingLine/>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4">
-            {
-              Products.map((item, index) => (
-                // Product card
-                <ProductCard item={item}  key={index}/>
-              ))
-            }
-          </div>
+          <ItemsList products={Products} />
         </div>
       </Container>
     </>

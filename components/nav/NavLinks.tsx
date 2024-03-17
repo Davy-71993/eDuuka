@@ -9,9 +9,10 @@ type Props = {
 const NavLinks = ({ className}: Props) => {
   return (
     <div className={clsx("w-full", className)}>
-        <Link href="/market" className='line-clamp-1' >Market</Link>
-        <Link href="/view" className='line-clamp-1' >Get Started</Link>
+        <Link href="/view" className='line-clamp-1' >Buy</Link>
         <Link href="/map" className='line-clamp-1' >Map</Link>
+        <Link href="/ads" className='line-clamp-1' >Ads</Link>
+        <Link href="/help" className='line-clamp-1' >Help</Link>
     </div>
   );
 };
